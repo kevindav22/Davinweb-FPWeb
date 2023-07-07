@@ -1,0 +1,35 @@
+	PERSIAPAN
+-buat project
+	shift+klik kanan open in powershel
+	composer create-project laravel/laravel:"9.*" .  //untuk mendownload kerangka laravel di project kita
+	php artisan serve //untuk menjalankan project di browser
+-buka project di vscodee
+	buka terminal
+	php artisan make:controller HomeController //utuk membuat controller home kita
+-buka controller yang sudahdibuat
+	buat method public function index()
+-buka file web.php 
+	Route::get('/' , [HomeController::class, 'index']); //untuk menjalankan controler index di browser
+
+-mulai dari login 
+	pindah template adminlte 3 ke project kita -> public ->paste
+	php artisan make::controller AuthController //untuk membuat controller login
+-buka controller yang sudah dibuat 
+	tambah function login 
+	public function login(){
+		return view('auth.login'); //berarti kita akan masuk ke folder auth lalu memanggal file login
+	}
+	buat folder auth tambahkan file didalamnya login.php pada folder resources->view
+-buka web.php
+	Route::get('/login' , [AuthController::class, 'login']); //utk menjalakan controler login pada browser
+-buka resource->view
+	tambah folder baru bernama auth tambah file didalam bernama login.blade.php
+-buka templet lte->pages->examples->loginv2 
+	salin semua code didalam dan pastekan di login.blade tadi
+	ganti referensi href bagian ../../ menjadi namafolderltekita/
+	hapus codingan yang tidak diperlukan
+-buka web.php
+	Route::post('/login' , [AuthController::class, 'authenticated']); //agar login kita dapat menuju ke menu selanutnya
+-buka authcontrooller
+	tambahkan fungsi authenticated
+	
