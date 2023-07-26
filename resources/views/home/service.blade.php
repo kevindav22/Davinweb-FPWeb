@@ -26,17 +26,17 @@
 
 <body>
     <!--navbar-->   
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" data-aos="fade-down">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
         <img src="image/{{$about->logo}}" class="" style="margin-right: 4px; width:35px;height:35px;" >
-        <a class="navbar-brand" href="#">{{$about->nama}}</a>
+        <a class="navbar-brand" href="#"> {{$about->nama}}</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/beranda">Beranda</a>
+              <a class="nav-link" aria-current="page" href="/beranda">Beranda</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/profil">Profil</a>
@@ -45,13 +45,13 @@
               <a class="nav-link" href="/team">Team</a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Services
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <li><a class="dropdown-item" href="/service">Layanan</a></li>
-                <li><a class="dropdown-item" href="/service#portofolio">Portofolio</a></li>
-                <li><a class="dropdown-item" href="/service#testimonials">Testimonials</a></li>
+                <li><a class="dropdown-item" href="#portofolio">Portofolio</a></li>
+                <li><a class="dropdown-item" href="#testimonials">Testimonials</a></li>
               </ul>
             </li>
             <li class="nav-item">
@@ -63,88 +63,7 @@
     </nav>
     <!-- End Navbar-->
 
-   <!-- carousel -->
-   <div class="imgback">
-   <div id="carouselExampleCaptions" class="carousel slide " data-bs-ride="carousel">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
-        aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-        aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-        aria-label="Slide 3"></button>
-    </div>
-
-    <div class="carousel-inner">
-      @foreach ($sliders as $index => $slider)
-      <div class="carousel-item <?php echo $index === 0 ? 'active' : ''; ?>">
-        <img src="image/{{$slider->image}}" class="d-block w-100 carousel-img" alt="..." />
-        <div class="carousel-caption d-none d-md-block">
-          <h5 data-aos="fade-up"> {{$slider->title}}</b></h5>
-          <p data-aos="fade-down">{{$slider->description}}</p>
-          <a href="{{$contact->linkwhatsapp}}" class="btn btn-outline-success" data-aos="fade-down">Hubungi Kami</a>
-        </div>
-      </div>
-     
-      @endforeach
-    </div>
-    
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-
-  <!-- end carousel -->
-
-  <!-- Tentang -->
-  <div class="about-us mt-5">
-    <div class="container">
-      <div class="row mt-5">
-        <div class="tentang-kiri col-md-6" data-aos="fade-right">
-          <h5 class="fw-bold about-us-title">
-           Tentang Kami
-          </h5>
-          <p class=" mt-4 about-us-subtitle">
-            {{$deskripsi->tentang}}
-          </p>
-          <a href="/profil" class="btn btn-success">Selengkapnya</a>
-        </div>
-        <div class="col-md-6" data-aos="fade-right">
-          <img src="image/{{$deskripsi->imgtentang}}" alt="" height="500px" width="520px">
-          
-        </div>        
-      </div>
-      
-      <div class="title-container text-center mt-5 ">
-        <h1 class="fw-bold" data-aos="fade-up">{{$deskripsi->subjudulunggul}}</h1>
-      </div>
-      <p class="text-center" data-aos="fade-up">
-        {{$deskripsi->keunggulan}}
-      </p>
-      
-      <div class="row">
-        @foreach ($unggul as $unggulan)
-        <div class="col-md-4">
-          <div class="card border-0 text-center p-4 mt-3 shadow p-3 mb-5 bg-secondary text-white" data-aos="fade-up">
-            <div class="card-body">
-              <div class="card-icon">
-                <img src="image/{{$unggulan->image}}" alt="" class="img-fluid" width="80">
-              </div>
-              <div class="card-title fw-bolder mt-4">{{$unggulan->title}}</div>
-              <p class="card-description mt-3">
-                {{$unggulan->description}}
-              </p>
-            </div>
-          </div>
-      </div>      
-        @endforeach
-      </div>
-    </div>
-  </div>
-    <!-- end Tentang -->
+  
 
      <!-- services -->
 
@@ -159,7 +78,6 @@
             <p class=" mt-4 service-us-subtitle">
                {{$deskripsi->service}}
             </p>
-            <a href="/service" class="btn btn-success">Selengkapnya</a>
           </div>     
         </div>        
         <div class="row">
@@ -181,106 +99,120 @@
           </div>
               
           @endforeach
-         
-    
         </div>
       </div>
     </div>
   <!-- end services -->
 
   <!-- Portofolio -->
-  <section id="portofolio" class="pt-5">
-    <div class="container">
-      <h5 class="fw-bold service-us-title text-center" data-aos="fade-down">Portofolio</h5>
-      <div class="sliderrr" data-aos="fade-up">
-        <div class="owl-carousel">
-          @foreach ($portofol as $portofol)
-          <div class="sliderrr-card">
-            <div class="d-flex justify-content-center align-items-center mb-4">
-              <img src="image/{{$portofol->image}}" alt="">
-            </div>
-            <div class="card-kata">
-              <h5 class="text-center pb-3">{{$portofol->title}}</h5>
-            </div>       
+<section id="portofolio">
+  <div class="container">
+    <h5 class="fw-bold service-us-title text-center pt-5" data-aos="fade-down">Portofolio</h5>
+    <p class="text-center" data-aos="fade-down">
+     {{$deskripsi->portofolio}}
+    </p>
+    <div class="row row-cols-1 row-cols-md-4 g4 py-3">
+      @foreach ($portofol as $portofol)
+      <div class="col hoper mb-3"  data-aos="zoom-in">
+        <div class="card foliooo">
+          <img src="image/{{$portofol->image}}" class="img-folio" alt="...">
+          <div class="card-body foliooo-body">
+            <h5 class="card-title text-center"> <a href="{{$portofol->description}}" style="text-decoration: none">{{$portofol->title}}</h5></a>
           </div>
-              
-          @endforeach
-          
-        </div>
-        <div class="tombol d-flex" style="justify-content: center">
-          <a href="/service#portofolio" class="btn btn-outline-success">Selengkapnya</a>
         </div>
       </div>
+      @endforeach
+      
     </div>
-  </section>
+   </div>
+</section>
+
+ 
 
   <!-- end Portofolio -->
- 
-  <!-- Testi -->
 
-  <section class="testi"data-aos="fade-up" >
+  <!-- Testimonials -->
+  <section id="testimonials">
     <div class="container">
-      <h1 class="testi-header">
-        Apa kata mereka?
-      </h1>
-      <div class="testimonials" data-aos="zoom-in">
-        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner">
-            @foreach ($testimon as $index => $testimons)
-            <div class="carousel-item {{$index === 0 ? 'active' : ''}}">
-              <div class="single-item">
-                <div class="row">
-                  <div class="col-md-5">
-                    <div class="profile">
-                      <div class="img-area">
-                        <img src="image/{{$testimons->image}}" alt="">
-                      </div>
-                      <div class="bio">
-                        <h2><strong>{{$testimons->name}}</strong></h2>
-                        <h4>{{$testimons->gelar}}</h4>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="contenttt">
-                      <p><span><i class="fas fa-quote-left"></i></span>
-                      {{$testimons->description}}</p>
-                      <p class="socialsss">
-                        <i class="fab fa-facebook"></i>
-                        <i class="fab fa-twitter"></i>
-                        <i class="fab fa-whatsapp"></i>
-                        <i class="fab fa-youtube"></i>
-                      </p>
-                      <p  class="d-flex" style="justify-content: end">
-                        <i class="fas fa-star fa-lg" style="color: blueviolet;"></i>
-                        <i class="fas fa-star fa-lg" style="color: blueviolet;"></i>
-                        <i class="fas fa-star fa-lg" style="color: blueviolet;"></i>
-                        <i class="fas fa-star fa-lg" style="color: blueviolet;"></i>
-                        <i class="fas fa-star-half-alt fa-lg" style="color: blueviolet;"></i>
-                      </p>
-                    </div>
-                  </div>
-                </div> 
-              </div>
-            </div>
-                
-            @endforeach
-            
+      <h5 class="fw-bold service-us-title text-center pt-5" data-aos="fade-down">Testimonials</h5>
+      <div class="row row-cols-1 row-cols-md-5 g4 py-3">
+        @foreach ($buktitf as $buktitf)
+        <div class="col hoper mb-3"  data-aos="zoom-in">
+          <div class="card foliooo">
+            <img src="image/{{$buktitf->image}}" class="img-folio" alt="...">
           </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
+        </div>
+        @endforeach
+        
+      </div>
+     </div>
+    
+      <!-- testimonials -->
+     
+      <!-- Testi -->
+    
+      <div class="testi"data-aos="fade-up" >
+        <div class="container">
+          <h1 class="testi-header">
+            Apa kata mereka?
+          </h1>
+          <div class="testimonials" data-aos="zoom-in">
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                @foreach ($testimon as $index => $testimons)
+                <div class="carousel-item {{$index === 0 ? 'active' : ''}}">
+                  <div class="single-item">
+                    <div class="row">
+                      <div class="col-md-5">
+                        <div class="profile">
+                          <div class="img-area">
+                            <img src="image/{{$testimons->image}}" alt="">
+                          </div>
+                          <div class="bio">
+                            <h2><strong>{{$testimons->name}}</strong></h2>
+                            <h4>{{$testimons->gelar}}</h4>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="contenttt">
+                          <p><span><i class="fas fa-quote-left"></i></span>
+                          {{$testimons->description}}
+                          <p class="socialsss">
+                            <i class="fab fa-facebook"></i>
+                            <i class="fab fa-twitter"></i>
+                            <i class="fab fa-whatsapp"></i>
+                            <i class="fab fa-youtube"></i>
+                          </p>
+                          <p  class="d-flex" style="justify-content: end">
+                            <i class="fas fa-star fa-lg" style="color: blueviolet;"></i>
+                            <i class="fas fa-star fa-lg" style="color: blueviolet;"></i>
+                            <i class="fas fa-star fa-lg" style="color: blueviolet;"></i>
+                            <i class="fas fa-star fa-lg" style="color: blueviolet;"></i>
+                            <i class="fas fa-star-half-alt fa-lg" style="color: blueviolet;"></i>
+                          </p>
+                        </div>
+                      </div>
+                    </div> 
+                  </div>
+                </div>
+                @endforeach 
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+      <!-- endTesti -->
   </section>
-
-  <!-- endTesti -->
+ 
   
   
   
@@ -410,34 +342,6 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <script>
-     $('.owl-carousel').owlCarousel({
-    loop:true,
-    margin:10,
-    responsiveClass:true,
-    center:true,
-    nav:true,
-    autoplay:true,
-    NavText:[
-      "i class='fa fa-angle-left'></i>",
-      "i class='fa fa-angle-right'></i>"
-    ],
-    responsive:{
-        0:{
-            items:1,
-            nav:true
-        },
-        600:{
-            items:3,
-        },
-        1000:{
-            items:4,
-        }
-    }
-})
-
-
-    </script>
     
 </body>
 </html>

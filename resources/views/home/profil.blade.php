@@ -21,25 +21,25 @@
  <!-- owl carousel theme.css-->
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <title>{{$about->nama}}</title>
+    <title>DavinWeb</title>
 </head>
 
 <body>
     <!--navbar-->   
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" data-aos="fade-down">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
         <img src="image/{{$about->logo}}" class="" style="margin-right: 4px; width:35px;height:35px;" >
-        <a class="navbar-brand" href="#">{{$about->nama}}</a>
+        <a class="navbar-brand" href="#">{{$about->nama}}</b> </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/beranda">Beranda</a>
+              <a class="nav-link" aria-current="page" href="/beranda">Beranda</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/profil">Profil</a>
+              <a class="nav-link active" href="/profil">Profil</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/team">Team</a>
@@ -65,36 +65,16 @@
 
    <!-- carousel -->
    <div class="imgback">
-   <div id="carouselExampleCaptions" class="carousel slide " data-bs-ride="carousel">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
-        aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-        aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-        aria-label="Slide 3"></button>
-    </div>
-
+   <div id="carouselExampleCaptions" data-bs-ride="carousel">
     <div class="carousel-inner">
-      @foreach ($sliders as $index => $slider)
-      <div class="carousel-item <?php echo $index === 0 ? 'active' : ''; ?>">
-        <img src="image/{{$slider->image}}" class="d-block w-100 carousel-img" alt="..." />
-        <div class="carousel-caption d-none d-md-block">
-          <h5 data-aos="fade-up"> {{$slider->title}}</b></h5>
-          <p data-aos="fade-down">{{$slider->description}}</p>
-          <a href="{{$contact->linkwhatsapp}}" class="btn btn-outline-success" data-aos="fade-down">Hubungi Kami</a>
+      <div class="carousel-item active">
+        <img src="image/{{$deskripsi->bgtentang}}" class="d-block w-100 carousel-img" alt="..." />
+        <div class="judul">
+          <h5 data-aos="fade-up"><b>TENTANG KAMI</b></h5>
+          
         </div>
       </div>
-     
-      @endforeach
     </div>
-    
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-      <span class="visually-hidden">Next</span>
-    </button>
   </div>
 
   <!-- end carousel -->
@@ -104,25 +84,27 @@
     <div class="container">
       <div class="row mt-5">
         <div class="tentang-kiri col-md-6" data-aos="fade-right">
-          <h5 class="fw-bold about-us-title">
-           Tentang Kami
-          </h5>
-          <p class=" mt-4 about-us-subtitle">
-            {{$deskripsi->tentang}}
+          <p class="ttg-title">
+              {{$about->subjudul}}
           </p>
-          <a href="/profil" class="btn btn-success">Selengkapnya</a>
+          
+            <p class="ttg-title visi">
+              <b style="font-size: 35px">VISI </b>{{$about->visi}}
+           </p>
+           <p class="ttg-title misi">
+            <b style="font-size: 35px">MISI </b>{{$about->misi}}
+        </p>
         </div>
         <div class="col-md-6" data-aos="fade-right">
-          <img src="image/{{$deskripsi->imgtentang}}" alt="" height="500px" width="520px">
+          <img src="image/{{$deskripsi->imgtentang}}" alt="" height="490px" width="510px">
           
         </div>        
       </div>
-      
       <div class="title-container text-center mt-5 ">
         <h1 class="fw-bold" data-aos="fade-up">{{$deskripsi->subjudulunggul}}</h1>
       </div>
       <p class="text-center" data-aos="fade-up">
-        {{$deskripsi->keunggulan}}
+       {{$deskripsi->keunggulan}}
       </p>
       
       <div class="row">
@@ -144,143 +126,12 @@
       </div>
     </div>
   </div>
+  
     <!-- end Tentang -->
 
-     <!-- services -->
-
-     <div class="service mt-5 bg-dark">
-      <div class="container">
-        <div class="row mt-5">
-          <div class="img-service col-md-6" data-aos="zoom-in-left" >
-            <img src="image/{{$deskripsi->imgservice}}" alt="" height="400px" width="420px"  >
-          </div>  
-          <div class="tentang-kanan col-md-6" data-aos="zoom-in-left">
-            <h5 class="fw-bold service-us-title">Services</h5>
-            <p class=" mt-4 service-us-subtitle">
-               {{$deskripsi->service}}
-            </p>
-            <a href="/service" class="btn btn-success">Selengkapnya</a>
-          </div>     
-        </div>        
-        <div class="row">
-          @foreach ($service as $service)
-          <div class="col-md-6">
-            <div class="hoper">
-              <div class="card border-0 text-center p-4 mt-3 shadow p-3 mb-5 bg-secondary text-white" data-aos="fade-up">
-                <div class="card-body ">
-                  <div class="icon">
-                    <img src="image/{{$service->image}}" alt="" class="img-fluid" width="80">
-                  </div>
-                  <div class="card-title fw-bolder mt-4">{{$service->title}}</div>
-                  <p class="card-description mt-3">
-                    {{$service->description}}
-                  </p>
-                </div>
-              </div>          
-            </div> 
-          </div>
-              
-          @endforeach
-         
-    
-        </div>
-      </div>
-    </div>
-  <!-- end services -->
-
-  <!-- Portofolio -->
-  <section id="portofolio" class="pt-5">
-    <div class="container">
-      <h5 class="fw-bold service-us-title text-center" data-aos="fade-down">Portofolio</h5>
-      <div class="sliderrr" data-aos="fade-up">
-        <div class="owl-carousel">
-          @foreach ($portofol as $portofol)
-          <div class="sliderrr-card">
-            <div class="d-flex justify-content-center align-items-center mb-4">
-              <img src="image/{{$portofol->image}}" alt="">
-            </div>
-            <div class="card-kata">
-              <h5 class="text-center pb-3">{{$portofol->title}}</h5>
-            </div>       
-          </div>
-              
-          @endforeach
-          
-        </div>
-        <div class="tombol d-flex" style="justify-content: center">
-          <a href="/service#portofolio" class="btn btn-outline-success">Selengkapnya</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- end Portofolio -->
+   
  
-  <!-- Testi -->
-
-  <section class="testi"data-aos="fade-up" >
-    <div class="container">
-      <h1 class="testi-header">
-        Apa kata mereka?
-      </h1>
-      <div class="testimonials" data-aos="zoom-in">
-        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner">
-            @foreach ($testimon as $index => $testimons)
-            <div class="carousel-item {{$index === 0 ? 'active' : ''}}">
-              <div class="single-item">
-                <div class="row">
-                  <div class="col-md-5">
-                    <div class="profile">
-                      <div class="img-area">
-                        <img src="image/{{$testimons->image}}" alt="">
-                      </div>
-                      <div class="bio">
-                        <h2><strong>{{$testimons->name}}</strong></h2>
-                        <h4>{{$testimons->gelar}}</h4>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="contenttt">
-                      <p><span><i class="fas fa-quote-left"></i></span>
-                      {{$testimons->description}}</p>
-                      <p class="socialsss">
-                        <i class="fab fa-facebook"></i>
-                        <i class="fab fa-twitter"></i>
-                        <i class="fab fa-whatsapp"></i>
-                        <i class="fab fa-youtube"></i>
-                      </p>
-                      <p  class="d-flex" style="justify-content: end">
-                        <i class="fas fa-star fa-lg" style="color: blueviolet;"></i>
-                        <i class="fas fa-star fa-lg" style="color: blueviolet;"></i>
-                        <i class="fas fa-star fa-lg" style="color: blueviolet;"></i>
-                        <i class="fas fa-star fa-lg" style="color: blueviolet;"></i>
-                        <i class="fas fa-star-half-alt fa-lg" style="color: blueviolet;"></i>
-                      </p>
-                    </div>
-                  </div>
-                </div> 
-              </div>
-            </div>
-                
-            @endforeach
-            
-          </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- endTesti -->
+ 
   
   
   
@@ -435,8 +286,6 @@
         }
     }
 })
-
-
     </script>
     
 </body>

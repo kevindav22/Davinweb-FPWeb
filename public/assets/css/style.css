@@ -1,3 +1,5 @@
+.navbar {
+}
 .carousel-img {
     max-height: 99vh;
     opacity: 15%;
@@ -21,40 +23,35 @@
 .carousel-caption h5 {
     font-size: 60px;
 }
+.judul {
+    position: absolute;
+    top: 40%;
+    left: 30%;
+    text-align: end;
+    text-shadow: #000000;
+}
+.judul h5 {
+    font-size: 60px;
+    color: #e7e7e7;
+}
+.ttg-title {
+    font-size: 16px;
+}
 
 .vh-50 {
     height: 50vh;
 }
-
-.primary {
-    color: #07bf07;
-}
-
-.active {
-    color: #07bf07 !important;
-}
-
 .title-container {
     position: relative;
-    padding-bottom: 40px;
 }
 
 .title-container h2::after {
-    content: "";
-    position: absolute;
-    display: black;
-    width: 50px;
-    height: 3px;
-    background-color: #07bf07;
-    bottom: 0;
-    left: calc(50% - 25px);
-    margin-bottom: 20px;
 }
 .about-us {
     background-color: white;
 }
 .tentang-kiri {
-    padding-top: 150px;
+    padding-top: 70px;
 }
 .about-us-title {
     font-size: 50px;
@@ -67,6 +64,27 @@
     height: "2";
     width: "2";
 }
+.img-service {
+    padding-top: 75px;
+}
+.tentang-kanan {
+    padding-top: 150px;
+    color: rgb(255, 255, 255);
+}
+.service-us-title {
+    font-size: 50px;
+}
+
+.service-us-subtitle {
+    font-size: 16px;
+}
+.service-us-img {
+    height: "2";
+    width: "2";
+}
+.title-service {
+    color: white;
+}
 
 .card-icon {
     transition: 0.5s;
@@ -74,6 +92,52 @@
 
 .card-icon:hover {
     color: #07bf07;
+}
+
+.hoper {
+    transition: all 0.2s ease;
+}
+.hoper:hover {
+    transform: scale(1.06);
+    color: #07bf07;
+}
+
+.sliderrr {
+    margin-bottom: 20px;
+    position: relative;
+}
+.sliderrr .owl-item.active.center .sliderrr-card {
+    transform: scale(1.15);
+    opacity: 1;
+    background-color: #e7e7e7;
+}
+.sliderrr-card {
+    background-color: #fff;
+    margin: 50px 15px 90px 15px;
+    border-radius: 5px;
+    box-shadow: 0 15px 35px -20px #898989;
+    transform: scale(0.9);
+    opacity: 0.6;
+    transition: all 0.3s;
+}
+.sliderrr-card img {
+    border-radius: 5px 5px 0px 0px;
+}
+.owl-nav .owl-next {
+    position: absolute;
+    top: calc(50% - 15%);
+    right: 0;
+    opacity: 1;
+    font-size: 30px !important;
+    z-index: 1;
+}
+.owl-nav .owl-prev {
+    position: absolute;
+    top: calc(50% - 15%);
+    left: 0;
+    opacity: 1;
+    font-size: 30px !important;
+    z-index: 1;
 }
 
 .mansory-sizer,
@@ -94,10 +158,18 @@
 }
 
 a {
-    color: white;
+    color: #07bf07;
+}
+a:hover {
+    color: #1f1f1f;
 }
 
-.btn-subscribe,
+@media only screen and (max-width: 990px) {
+    .box {
+        margin: 0 0 30px;
+    }
+}
+License Terms .btn-subscribe,
 .btn-to-top {
     background: #07bf07;
 }
@@ -165,5 +237,145 @@ a {
     .mansory-sizer,
     .mansory-item {
         width: 100%;
+    }
+}
+
+.container-service {
+    display: flex;
+    background-color: #9a1e1e;
+    margin: 5px 15px 90px 15px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px -20px #898989;
+}
+
+.testi {
+    display: grid;
+    place-items: center;
+}
+.testi-header {
+    position: relative;
+    text-align: left;
+    font-weight: 900;
+    padding-bottom: 0px;
+    color: #000000;
+}
+.testi-header:after {
+    content: "";
+    height: 3px;
+    width: 200px;
+    position: absolute;
+    bottom: 0;
+    left: calc(50% - 100%);
+    background: #000000;
+}
+.testi-header span {
+    display: block;
+    font-size: 15px;
+    margin: 0 auto 80px auto;
+}
+.testimonials {
+}
+.single-item {
+    background: #a9a9a991;
+    color: #111;
+    padding: 15px;
+    margin: 0px 15px;
+    border-radius: 35px;
+}
+.profile {
+    margin-bottom: 30px;
+    text-align: center;
+}
+.img-area img {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    border: 7px solid rgb(255, 255, 255);
+}
+.contenttt {
+    font-size: 18px;
+}
+.contenttt p {
+    text-align: justify;
+}
+.contenttt p span {
+    font-size: 48px;
+    margin-right: 20px;
+    color: blueviolet;
+}
+.socialsss i {
+    margin-right: 55px;
+}
+.bio h2 {
+    font-style: inherit;
+}
+.bio h4 {
+    color: blueviolet;
+    font-family: monospace;
+}
+.img-folio {
+    border-radius: 40px;
+    padding: 10px;
+}
+.foliooo {
+    border-radius: 30px;
+    box-shadow: 0 15px 35px -20px #898989;
+}
+.foliooo-body {
+    padding: 25px;
+    margin-top: -15px;
+}
+.btn-folio {
+    border-radius: 10px;
+    width: 100px;
+}
+.btn {
+    border-radius: 5px;
+}
+.kkkk {
+    border: none;
+}
+
+.onlykontak {
+    margin-top: 100px;
+    position: relative;
+}
+.kotakpul {
+    box-shadow: 0 0px 50px -10px #8989899a;
+}
+.col-md-7 {
+    padding: 15px;
+}
+.kotakkanan {
+    background: #3f3c3c;
+    padding: 20px;
+    color: white;
+}
+
+.cardtim-img-top {
+    border-radius: 50%;
+    height: 250px !important;
+    width: 250px !important;
+    position: relative;
+    top: -80px;
+    object-fit: cover;
+    border: 3px solid rgb(73, 73, 73);
+}
+.cardtim {
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 60px !important;
+    border: 3px solid rgba(0, 0, 0, 0.288);
+}
+.cardtim:hover {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    border: 0px solid rgba(0, 0, 0, 0.288);
+}
+.cardtim-body {
+    margin-top: -40px;
+}
+@media only screen and (max-width: 600px) {
+    .cardtim-img-top {
+        left: 48px !important;
     }
 }

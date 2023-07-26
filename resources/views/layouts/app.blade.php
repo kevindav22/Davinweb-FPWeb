@@ -7,7 +7,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Dashboard</title>
+  <title>@yield('title')</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -34,8 +34,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
-      <img src="/lte/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">AdminLTE 3</span>
+      <img src="/assets/img/davin.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <span class="brand-text font-weight-light">Davin<b>Web</b></span>
     </a>
 
     <!-- Sidebar -->
@@ -54,7 +54,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
      <nav class="mt-2">
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-item">
-              <a href="/admin/dashboard" class="nav-link">
+              <a href="/dashboard" class="nav-link">
                 <i class="nav-icon fas fa-tachometer-alt"></i>
                   <p>
                     Dashboard
@@ -62,10 +62,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </a>
           </li> 
           <li class="nav-item">
-              <a href="/" target="_blank" class="nav-link">
+              <a href="/beranda" target="_blank" class="nav-link">
                 <i class="nav-icon fas fa-link"></i>
                   <p>
-                    Lihat Website
+                    Website
                   </p>
               </a>
           </li> 
@@ -73,43 +73,49 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <a href="#" class="nav-link">
             <i class="nav-icon fas fa-th"></i>
             <p>
-              Data Master
+              Data Anda
               <i class="right fas fa-angle-left"></i>
             </p>
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="/admin/sliders" class="nav-link">
+              <a href="/sliders" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Data Sliders</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="/admin/services" class="nav-link">
+              <a href="/unggul" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
-                <p>Data Services</p>
+                <p>Data Keunggulan</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="/admin/testimonials" class="nav-link">
+              <a href="/testimon" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Data Testimonials</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="/admin/portfolios" class="nav-link">
+              <a href="/buktitf" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Bukti Transaksi</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="/portofol" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Data Portfolios</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="/admin/clients" class="nav-link">
+              <a href="/services" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
-                <p>Data Clients</p>
+                <p>Services</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="/admin/teams" class="nav-link">
+              <a href="/tim" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Data Teams</p>
               </a>
@@ -117,7 +123,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </ul>
         </li>
         <li class="nav-item">
-          <a href="/admin/about" class="nav-link">
+          <a href="/deskripsi" class="nav-link">
+            <i class="nav-icon fas fa-spell-check"></i>
+            <p>
+              Deskripsi
+            </p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/about" class="nav-link">
             <i class="nav-icon fas fa-user"></i>
             <p>
               Tentang
@@ -125,7 +139,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </a>
         </li>
         <li class="nav-item">
-          <a href="/admin/contact" class="nav-link">
+          <a href="/contact" class="nav-link">
             <i class="nav-icon fas fa-phone"></i>
             <p>
               Kontak
@@ -155,13 +169,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Starter Page</h1>
+            <h1 class="m-0">@yield('title')</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Starter Page</li>
-            </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
@@ -210,7 +220,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       Anything you want
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2023 <a href="https://www.facebook.com/put.t.till/">Hamba Allah</a>.</strong> All rights reserved.
+    <strong>Copyright &copy;{{ date('Y') }} <a href="https://www.facebook.com/put.t.till/">Hamba Allah</a>.</strong> All rights reserved.
   </footer>
 </div>
 <!-- ./wrapper -->
