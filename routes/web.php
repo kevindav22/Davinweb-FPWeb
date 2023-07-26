@@ -17,7 +17,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DeskripsiController;
 
 //home
-Route::get('/beranda', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index']);
 Route::get('/profil', [HomeController::class, 'profil']);
 Route::get('/team', [HomeController::class, 'team']);
 Route::get('/kontak', [HomeController::class, 'kontak']);

@@ -62,7 +62,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </a>
           </li> 
           <li class="nav-item">
-              <a href="/beranda" target="_blank" class="nav-link">
+              <a href="/" target="_blank" class="nav-link">
                 <i class="nav-icon fas fa-link"></i>
                   <p>
                     Website

@@ -36,7 +36,7 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="/beranda">Beranda</a>
+              <a class="nav-link" aria-current="page" href="/">Beranda</a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" href="/profil">Profil</a>
@@ -183,7 +183,7 @@
                 <h4 class="fw-bold">Link Halaman</h2>
                   <ul class="list-group list-unstyled">
                     <li class="list-item">
-                      <a href="/beranda" class="text-decoration-none text-white">
+                      <a href="/" class="text-decoration-none text-white">
                         <i class="fa fa-chevron-right primary"></i>
                         Beranda
                       </a>
