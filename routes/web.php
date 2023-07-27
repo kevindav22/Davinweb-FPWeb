@@ -44,11 +44,11 @@ Route::resource('teams', TeamsController::class)->middleware('auth');
 Route::resource('tim', TimController::class)->middleware('auth');
 
 
-Route::get('contact', [ContactController::class, 'index']); 
-Route::put('contact/{id}', [ContactController::class, 'update']);
+Route::get('contact', [ContactController::class, 'index'])->middleware('auth');
+Route::put('contact/{id}', [ContactController::class, 'update'])->middleware('auth');
 
-Route::get('about', [AboutController::class, 'index']);
-Route::put('about/{id}', [AboutController::class, 'update']);
+Route::get('about', [AboutController::class, 'index'])->middleware('auth');
+Route::put('about/{id}', [AboutController::class, 'update'])->middleware('auth');
 
-Route::get('deskripsi', [DeskripsiController::class, 'index']);
-Route::put('deskripsi/{id}', [DeskripsiController::class, 'update']);
+Route::get('deskripsi', [DeskripsiController::class, 'index'])->middleware('auth');
+Route::put('deskripsi/{id}', [DeskripsiController::class, 'update'])->middleware('auth');
